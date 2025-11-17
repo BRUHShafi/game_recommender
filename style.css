@@ -1,3 +1,7 @@
+/* =========================================
+ * GLOBAL RESET & BASE TYPOGRAPHY
+ * =======================================*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +9,11 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page background and overall layout */
 body {
   background: radial-gradient(circle at top, #1e293b, #020617 55%);
   color: #e5e7eb;
@@ -14,6 +23,7 @@ body {
   padding: 20px;
 }
 
+/* Main content container */
 .container {
   max-width: 900px;
   width: 100%;
@@ -23,6 +33,10 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   border: 1px solid #1f2937;
 }
+
+/* =========================================
+ * HEADER
+ * =======================================*/
 
 header {
   text-align: center;
@@ -38,10 +52,25 @@ header p {
   color: #9ca3af;
 }
 
+/* Small action row under the header text */
+.header-actions {
+  margin-top: 12px;
+}
+
+/* Slightly adjust the About button in the header */
+.header-about-btn {
+  font-size: 0.85rem;
+}
+
+/* =========================================
+ * SECTION LAYOUT & TEXT
+ * =======================================*/
+
 section {
   margin-bottom: 24px;
 }
 
+/* Shared header layout for sections with title + actions/controls */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -55,6 +84,7 @@ h2 {
   margin-bottom: 4px;
 }
 
+/* Section sub-messages under headings */
 #results-message,
 #favorites-message,
 #all-games-message {
@@ -62,15 +92,21 @@ h2 {
   font-size: 0.9rem;
 }
 
+/* =========================================
+ * FORMS (QUIZ CONTROLS)
+ * =======================================*/
+
 .form-group {
   margin-bottom: 16px;
 }
 
+/* Labels above select/radio groups */
 label {
   display: block;
   margin-bottom: 6px;
 }
 
+/* Dropdowns for platform/genre/mood */
 select {
   width: 100%;
   padding: 8px 10px;
@@ -80,11 +116,13 @@ select {
   color: #e5e7eb;
 }
 
+/* Focus state for selects */
 select:focus {
   outline: none;
   border-color: #38bdf8;
 }
 
+/* Row of radio options (session length, multiplayer) */
 .options-row {
   display: flex;
   flex-wrap: wrap;
@@ -92,6 +130,7 @@ select:focus {
   margin-top: 4px;
 }
 
+/* Individual pill-style option for radio groups */
 .options-row label {
   display: inline-flex;
   align-items: center;
@@ -104,6 +143,10 @@ select:focus {
   cursor: pointer;
 }
 
+/* =========================================
+ * BUTTONS
+ * =======================================*/
+
 button {
   cursor: pointer;
   border: none;
@@ -114,11 +157,13 @@ button {
   transition: transform 0.05s ease, box-shadow 0.05s ease, background 0.1s ease;
 }
 
+/* Click (active) effect */
 button:active {
   transform: scale(0.97);
   box-shadow: 0 0 0;
 }
 
+/* Primary action button (quiz submit) */
 .primary-btn {
   background: #38bdf8;
   color: #020617;
@@ -129,6 +174,7 @@ button:active {
   background: #0ea5e9;
 }
 
+/* Secondary buttons (retake, shuffle, view page, etc.) */
 .secondary-btn {
   background: #111827;
   color: #e5e7eb;
@@ -139,17 +185,30 @@ button:active {
   background: #1f2937;
 }
 
+/* Full-width button for the quiz submit */
 .full-width-btn {
   width: 100%;
   margin-top: 8px;
 }
 
+/* Smaller pill-style button (favorites, links) */
 .small-btn {
   padding: 6px 12px;
   font-size: 0.8rem;
 }
 
-/* Cards layout */
+/* Buttons row (e.g., in results header) */
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* =========================================
+ * CARD LAYOUT (RESULTS, FAVORITES, ALL GAMES)
+ * =======================================*/
+
+/* Grid layout for cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -157,6 +216,7 @@ button:active {
   margin-top: 12px;
 }
 
+/* Individual card styling */
 .card {
   background: #020617;
   border-radius: 12px;
@@ -167,16 +227,19 @@ button:active {
   gap: 6px;
 }
 
+/* Card title */
 .card h3 {
   margin-bottom: 2px;
   font-size: 1.1rem;
 }
 
+/* Card description text */
 .card p {
   font-size: 0.9rem;
   color: #9ca3af;
 }
 
+/* Tag list container (genres, platforms) */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -184,6 +247,7 @@ button:active {
   margin: 4px 0;
 }
 
+/* Individual tag pill */
 .tag {
   font-size: 0.75rem;
   padding: 3px 8px;
@@ -192,30 +256,40 @@ button:active {
   border: 1px solid #1f2937;
 }
 
+/* Small info text inside cards */
 .card small {
   font-size: 0.8rem;
   color: #6b7280;
 }
 
+/* Favorite button alignment inside card */
 .favorite-btn {
   align-self: flex-start;
   margin-top: 4px;
 }
 
-/* Favorites & All Games section separators */
+/* =========================================
+ * SECTION BORDERS (FAVORITES & ALL GAMES & ABOUT)
+ * =======================================*/
+
 #favorites-section,
-#all-games-section {
+#all-games-section,
+#about-section {
   border-top: 1px dashed #1f2937;
   padding-top: 16px;
 }
 
-/* Toolbar row for search & filters */
+/* =========================================
+ * TOOLBAR (SEARCH & FILTERS)
+ * =======================================*/
+
 .toolbar-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
+/* Search input field */
 .toolbar-row input[type="text"] {
   flex: 1 1 150px;
   padding: 8px 10px;
@@ -226,14 +300,20 @@ button:active {
   font-size: 0.9rem;
 }
 
+/* Focus state for search input */
 .toolbar-row input[type="text"]:focus {
   outline: none;
   border-color: #38bdf8;
 }
 
+/* Platform/genre dropdowns inside toolbar */
 .toolbar-row select {
   flex: 0 0 160px;
 }
+
+/* =========================================
+ * FOOTER
+ * =======================================*/
 
 footer {
   margin-top: 16px;
@@ -242,11 +322,18 @@ footer {
   color: #6b7280;
 }
 
+/* =========================================
+ * UTILITY CLASSES
+ * =======================================*/
+
 .hidden {
   display: none;
 }
 
-/* Mobile tweaks */
+/* =========================================
+ * RESPONSIVE DESIGN (MOBILE)
+ * =======================================*/
+
 @media (max-width: 600px) {
   .container {
     padding: 16px;

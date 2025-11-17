@@ -7,14 +7,23 @@
 </head>
 <body>
   <div class="container">
+    <!-- ===================== HEADER ===================== -->
     <header>
       <h1>Find Your Next Game 🎮</h1>
       <p>Answer a few quick questions and get personalized game suggestions.</p>
+
+      <!-- Small button to scroll to About section -->
+      <div class="header-actions">
+        <a href="#about-section" class="secondary-btn small-btn header-about-btn">
+          About this project
+        </a>
+      </div>
     </header>
 
-    <!-- QUIZ SECTION -->
+    <!-- ===================== QUIZ SECTION ===================== -->
     <section id="quiz-section">
       <h2>Tell us what you're in the mood for</h2>
+
       <form id="quiz-form">
         <!-- Platform -->
         <div class="form-group">
@@ -81,13 +90,14 @@
       </form>
     </section>
 
-    <!-- RESULTS SECTION -->
+    <!-- ===================== RESULTS SECTION ===================== -->
     <section id="results-section" class="hidden">
       <div class="section-header">
         <div>
           <h2>Your Game Recommendations</h2>
           <p id="results-message"></p>
         </div>
+
         <div class="actions-row">
           <button id="retake-btn" class="secondary-btn">Change my answers</button>
           <button id="shuffle-btn" class="secondary-btn">Show different games</button>
@@ -97,13 +107,14 @@
       <div id="results-container" class="cards"></div>
     </section>
 
-    <!-- FAVORITES SECTION -->
+    <!-- ===================== FAVORITES SECTION ===================== -->
     <section id="favorites-section">
       <div class="section-header">
         <div>
           <h2>Your Favorites ⭐ <span id="favorites-count"></span></h2>
           <p id="favorites-message">You haven't saved any favorites yet.</p>
         </div>
+
         <button id="clear-favorites-btn" class="secondary-btn small-btn">
           Clear favorites
         </button>
@@ -112,19 +123,23 @@
       <div id="favorites-container" class="cards"></div>
     </section>
 
-    <!-- ALL GAMES SECTION -->
+    <!-- ===================== BROWSE ALL GAMES SECTION ===================== -->
     <section id="all-games-section">
       <div class="section-header">
         <div>
           <h2>Browse All Games 📚</h2>
           <p id="all-games-message">Use search or filters to explore all available games.</p>
         </div>
+
         <div class="toolbar-row">
+          <!-- Search by title -->
           <input
             type="text"
             id="search-input"
             placeholder="Search by game name..."
           />
+
+          <!-- Filter by platform -->
           <select id="platform-filter">
             <option value="">All platforms</option>
             <option value="PC">PC</option>
@@ -133,17 +148,54 @@
             <option value="Switch">Nintendo Switch</option>
             <option value="Mobile">Mobile</option>
           </select>
+
+          <!-- Filter by genre -->
+          <select id="genre-filter">
+            <option value="">All genres</option>
+            <option value="Action">Action</option>
+            <option value="RPG">RPG</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Multiplayer">Multiplayer</option>
+            <option value="Story-rich">Story-rich</option>
+            <option value="Horror">Horror</option>
+            <option value="Puzzle">Puzzle</option>
+          </select>
         </div>
       </div>
 
       <div id="all-games-container" class="cards"></div>
     </section>
 
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section id="about-section">
+      <h2>About This Project</h2>
+      <p>
+        This is a simple Game Recommendation Website I built to practice web development.
+        It helps you discover games based on your platform, favorite genres, mood, and
+        how much time you want to play.
+      </p>
+
+      <p>Key features:</p>
+      <ul>
+        <li>🎯 Quiz that recommends games based on your answers</li>
+        <li>⭐ Save favorites using your browser's local storage</li>
+        <li>📚 Browse all games with search and platform/genre filters</li>
+        <li>🔗 Direct links to official game pages</li>
+      </ul>
+
+      <p>
+        Built using <strong>HTML</strong>, <strong>CSS</strong>, and
+        <strong>JavaScript</strong>, and hosted on <strong>GitHub Pages</strong>.
+      </p>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
     <footer>
       <p>Built by You 💻 | Simple Game Recommendation Website</p>
     </footer>
   </div>
 
+  <!-- Only one script now -->
   <script src="script.js"></script>
 </body>
 </html>
